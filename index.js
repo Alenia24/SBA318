@@ -7,10 +7,11 @@ const port = 3000;
 const trips = require("./routes/trips");
 const itenary = require("./routes/itenary");
 const passengers = require("./routes/passenger");
+const error = require("./utilities/error");
 
 // Body parsing middleware
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(bodyParser.json({extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json({ extended: true }));
 
 // Logging middleware
 app.use((req, res, next) => {
@@ -31,6 +32,12 @@ app.use("/api/passengers", passengers);
 
 app.get("/", (req, res) => {
   res.json("It works");
+});
+
+// 404 Middleware
+app.use((req, res) => {
+  res.status(404);
+  res.json({Error: "Resource Not Found" });
 });
 
 // Port and listen info
