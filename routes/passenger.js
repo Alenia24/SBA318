@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-// import trips data
+// import reviews data
 const passengers = require("../data/passengers");
 
 // import error handling middleware

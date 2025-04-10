@@ -9,7 +9,7 @@ const error = require("../utilities/error");
 
 router.route("/")
 .get((req, res) => {
-    res.json(`Itenary router`)
+    res.json(`Trip router`)
 })
 
 module.exports = router;

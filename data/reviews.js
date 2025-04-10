@@ -101,4 +101,4 @@ const reviews = [
   },
 ];
 
-module.export = reviews;
+module.exports = reviews;
