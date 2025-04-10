@@ -7,6 +7,8 @@ const port = 3000;
 const trips = require("./routes/trips");
 const itenary = require("./routes/itenary");
 const passengers = require("./routes/passenger");
+
+// Import error middleware
 const error = require("./utilities/error");
 
 // Body parsing middleware

@@ -48,3 +48,5 @@ const trips = [
     price: 4000,
   },
 ];
+
+module.exports = trips;

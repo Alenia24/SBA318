@@ -420,3 +420,5 @@ const passengers = [
     passport_number: "X2345678",
   },
 ];
+
+module.exports = passengers;

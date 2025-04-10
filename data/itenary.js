@@ -1,4 +1,4 @@
-const activity = [
+const activities = [
   {
     id: 1,
     tripId: 1,
@@ -298,3 +298,5 @@ const activity = [
       "Step into the magical world of Middle-earth with a guided tour of Hobbiton, the iconic movie set from 'The Lord of the Rings' and 'The Hobbit.'",
   },
 ];
+
+module.exports = activities;
