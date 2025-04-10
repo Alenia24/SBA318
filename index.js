@@ -5,6 +5,7 @@ const port = 3000;
 
 // Import routes
 const trips = require("./routes/trips");
+const itenary = require("./routes/itenary");
 
 // Body parsing middleware
 app.use(bodyParser.urlencoded({extended: true}));
@@ -24,6 +25,7 @@ app.use((req, res, next) => {
 
 // Routes
 app.use("/api/trips", trips);
+app.use("/api/itenary", itenary);
 
 app.get("/", (req, res) => {
   res.json("It works");
