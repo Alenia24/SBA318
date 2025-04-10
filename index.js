@@ -7,6 +7,7 @@ const port = 3000;
 const trips = require("./routes/trips");
 const itenary = require("./routes/itenary");
 const passengers = require("./routes/passenger");
+const reviews = require("./routes/reviews");
 
 // Import error middleware
 const error = require("./utilities/error");
@@ -31,6 +32,7 @@ app.use((req, res, next) => {
 app.use("/api/trips", trips);
 app.use("/api/itenary", itenary);
 app.use("/api/passengers", passengers);
+app.use("/api/reviews", reviews);
 
 app.get("/", (req, res) => {
   res.json("It works");
