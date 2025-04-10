@@ -100,3 +100,5 @@ const reviews = [
       "Great trip overall, but there was a bit too much time spent in travel between cities. However, the Amalfi Coast and Santorini were worth it.",
   },
 ];
+
+module.export = reviews;
