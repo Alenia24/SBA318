@@ -3,6 +3,9 @@ const bodyParser = require("body-parser");
 const app = express();
 const port = 3000;
 
+// Import routes
+const trips = require("./routes/trips");
+
 // Body parsing middleware
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json({extended: true}));
@@ -19,7 +22,10 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get("/api", (req, res) => {
+// Routes
+app.use("/api/trips", trips);
+
+app.get("/", (req, res) => {
   res.json("It works");
 });
 
