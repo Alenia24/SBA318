@@ -21,7 +21,6 @@ router.route("/")
             id: passengers[passengers.length - 1].id + 1,
             ...req.body,
         }
-
         // Add the passenger to passengers data array
         passengers.push(passenger);
         //Display the created passenger
