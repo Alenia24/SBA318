@@ -1,7 +1,7 @@
 const reviews = [
   {
     id: 1,
-    userId: 1,
+    participantId: 1,
     tripId: 7,
     tripName: "Scandinavian Northern Lights Quest",
     destination: "Tromsø, Norway",
@@ -11,7 +11,7 @@ const reviews = [
   },
   {
     id: 2,
-    userId: 7,
+    participantId: 7,
     tripId: 7,
     tripName: "Scandinavian Northern Lights Quest",
     destination: "Tromsø, Norway",
@@ -21,7 +21,7 @@ const reviews = [
   },
   {
     id: 3,
-    userId: 14,
+    participantId: 14,
     tripId: 8,
     tripName: "Moroccan Desert & Culture Tour",
     destination: "Marrakech, Merzouga, Fes – Morocco",
@@ -31,7 +31,7 @@ const reviews = [
   },
   {
     id: 4,
-    userId: 21,
+    participantId: 21,
     tripId: 8,
     tripName: "Moroccan Desert & Culture Tour",
     destination: "Marrakech, Merzouga, Fes – Morocco",
@@ -41,7 +41,7 @@ const reviews = [
   },
   {
     id: 5,
-    userId: 25,
+    participantId: 25,
     tripId: 9,
     tripName: "New Zealand Adventure Escape",
     destination: "Queenstown, Rotorua, Fiordland – New Zealand",
@@ -51,7 +51,7 @@ const reviews = [
   },
   {
     id: 6,
-    userId: 9,
+    participantId: 9,
     tripId: 9,
     tripName: "New Zealand Adventure Escape",
     destination: "Queenstown, Rotorua, Fiordland – New Zealand",
@@ -61,7 +61,7 @@ const reviews = [
   },
   {
     id: 7,
-    userId: 4,
+    participantId: 4,
     tripId: 10,
     tripName: "African Safari Expedition",
     destination: "Kenya & Tanzania",
@@ -71,7 +71,7 @@ const reviews = [
   },
   {
     id: 8,
-    userId: 19,
+    participantId: 19,
     tripId: 10,
     tripName: "African Safari Expedition",
     destination: "Kenya & Tanzania",
@@ -81,7 +81,7 @@ const reviews = [
   },
   {
     id: 9,
-    userId: 33,
+    participantId: 33,
     tripId: 11,
     tripName: "Mediterranean Coastal Escape",
     destination: "Spain, Italy, Greece",
@@ -91,7 +91,7 @@ const reviews = [
   },
   {
     id: 10,
-    userId: 33,
+    participantId: 33,
     tripId: 11,
     tripName: "Mediterranean Coastal Escape",
     destination: "Spain, Italy, Greece",
