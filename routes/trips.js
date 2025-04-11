@@ -38,28 +38,44 @@ router
     } else res.json({ Error: "Insufficient Data" });
   });
 
-router.route("/:id")
-.get((req, res) => {
+router
+  .route("/:id")
+  .get((req, res, next) => {
+    // Check if the trip exists
     const trip = trips.find((t) => t.id == req.params.id);
 
-    if(trip) res.json(trip)
+    // Display the trip if the trip exists
+    if (trip) res.json(trip);
     else next();
-})
-.patch((req, res, next) => {
-  // Find the trip
-  const trip = trips.find((t, i) => {
-    // If the trip exists
-    if (t.id == req.params.id) {
-      //Iterate over the req.body
-      for (const key in req.body) {
-        // Update
-        trips[i][key] = req.body[key];
+  })
+  .patch((req, res, next) => {
+    // Find the trip
+    const trip = trips.find((t, i) => {
+      // If the trip exists
+      if (t.id == req.params.id) {
+        //Iterate over the req.body
+        for (const key in req.body) {
+          // Update
+          trips[i][key] = req.body[key];
+        }
+        return true;
       }
-      return true
-    }
+    });
+    // Display the update trip if the trip exists
+    if (trip) res.json(trip);
+    else next();
+  })
+  .delete((req, res, next) => {
+    // Check if the trip exists
+    const trip = trips.find((t, i) => {
+      if (t.id == req.params.id) {
+        // Delete the trip
+        trips.splice(i, 1);
+        return true;
+      }
+    });
+    // Display the trip if the trip exists
+    if (trip) res.json(trip);
+    else next();
   });
-  // Display the update review if the review exists
-  if (trip) res.json(trip);
-  else next();
-});
 module.exports = router;
