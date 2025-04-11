@@ -9,9 +9,19 @@ const error = require("../utilities/error");
 
 router
   .route("/")
-  .get((req, res) => {
-    // Display all trips
-    res.json(trips);
+  .get((req, res, next) => {
+    // Query trips by price
+    if (req.query.price) {
+      // Iterate through each trip
+      trips.forEach((trip) => {
+        // If the trip price matches the query price
+        if (trip.price == req.query.price) {
+          // Display the trip with the query match
+          res.json(trip);
+        }
+      });
+      next();
+    } else res.json(trips);
   })
   .post((req, res) => {
     // Check if all requirements are included to create a trip
