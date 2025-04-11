@@ -37,7 +37,7 @@ router.route("/").post((req, res) => {
 
 router
   .route("/:id")
-  .get((req, res) => {
+  .get((req, res, next) => {
     const passenger = passengers.find((p) => p.id == req.params.id);
 
     if (passenger) res.json(passenger);
@@ -46,7 +46,7 @@ router
   .patch((req, res, next) => {
     // Find the passenger
     const passenger = passengers.find((p, i) => {
-      // If the trip exists
+      // If the passenger exists
       if (p.id == req.params.id) {
         //Iterate over the req.body
         for (const key in req.body) {
@@ -56,7 +56,20 @@ router
         return true;
       }
     });
-    // Display the update review if the review exists
+    // Display the update passenger if the passenger exists
+    if (passenger) res.json(passenger);
+    else next();
+  })
+  .delete((req, res, next) => {
+    // Check if the passenger exists
+    const passenger = passengers.find((p, i) => {
+      if (p.id == req.params.id) {
+        // Delete the passenger
+        passengers.splice(i, 1);
+        return true;
+      }
+    });
+
     if (passenger) res.json(passenger);
     else next();
   });
