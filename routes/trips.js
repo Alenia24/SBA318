@@ -39,6 +39,12 @@ router
   });
 
 router.route("/:id")
+.get((req, res) => {
+    const trip = trips.find((t) => t.id == req.params.id);
+
+    if(trip) res.json(trip)
+    else next();
+})
 .patch((req, res, next) => {
   // Find the trip
   const trip = trips.find((t, i) => {
