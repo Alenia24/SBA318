@@ -4,13 +4,32 @@ const router = express.Router();
 // import reviews data
 const reviews = require("../data/reviews");
 
+
 // import error handling middleware
 const error = require("../utilities/error");
 
 router
   .route("/")
-  .get((req, res) => {
-    res.json(reviews);
+  .get((req, res, next) => {
+    if(req.query.tripId) {
+      // Check if the trip exists in reviews
+      const trip = reviews.find((r) => r.tripId == req.query.tripId);
+
+      if(trip) {
+        // Create an array to store the posts
+        const reviewsArr = [];
+        // Iterate through each review
+        reviews.forEach(review => {
+          // If the review tripId matches the query tripId
+          if(review.tripId == req.query.tripId) {
+            // Add the review to the reviewsArr
+            reviewsArr.push(review)
+          }
+        })
+        // Display all the reviews with the query match
+        res.json(reviewsArr);
+      } else next();
+    } else res.json(reviews);
   })
   .post((req, res) => {
     // Check if all requirements are included to create a review
