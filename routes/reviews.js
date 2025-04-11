@@ -34,23 +34,45 @@ router
     } else res.json({ Error: "Insufficient Data" });
   });
 
-router.route("/:id")
-.patch((req, res, next) => {
-  // Find the review
-  const review = reviews.find((r, i) => {
-    // If the reveiew exists
-    if (r.id == req.params.id) {
+router
+  .route("/:id")
+  .get((req, res, next) => {
+    // Check if the review exists
+    const review = reviews.find((r) => r.id == req.params.id);
+
+    // Display the review if the review exists
+    if (review) res.json(review);
+    else next();
+  })
+  .patch((req, res, next) => {
+    // Find the review
+    const review = reviews.find((r, i) => {
+      // If the reveiew exists
+      if (r.id == req.params.id) {
         //Iterate over the req.body
-      for (const key in req.body) {
-        // Update
-        reviews[i][key] = req.body[key];
+        for (const key in req.body) {
+          // Update
+          reviews[i][key] = req.body[key];
+        }
+        return true;
       }
-      return true;
-    }
+    });
+    // Display the update review if the review exists
+    if (review) res.json(review);
+    else next();
+  })
+  .delete((req, res, next) => {
+    // Check if the review exists
+    const review = reviews.find((r, i) => {
+      if (r.id == req.params.id) {
+        // Delete the review
+        reviews.splice(i, 1);
+        return true;
+      }
+    });
+    // Display the review if the review exists
+    if (review) res.json(review);
+    else next();
   });
-  // Display the update review if the review exists
-  if (review) res.json(review);
-  else next();
-});
 
 module.exports = router;
