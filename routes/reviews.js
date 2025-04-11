@@ -11,6 +11,7 @@ const error = require("../utilities/error");
 router
   .route("/")
   .get((req, res, next) => {
+    // Query review by tripId
     if(req.query.tripId) {
       // Check if the trip exists in reviews
       const trip = reviews.find((r) => r.tripId == req.query.tripId);
