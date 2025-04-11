@@ -5,7 +5,7 @@ const port = 3000;
 
 // Import routes
 const trips = require("./routes/trips");
-const itenary = require("./routes/itenary");
+const itenary = require("./routes/itenaries");
 const passengers = require("./routes/passengers");
 const reviews = require("./routes/reviews");
 
@@ -30,7 +30,7 @@ app.use((req, res, next) => {
 
 // Routes
 app.use("/api/trips", trips);
-app.use("/api/itenary", itenary);
+app.use("/api/itenaries", itenary);
 app.use("/api/passengers", passengers);
 app.use("/api/reviews", reviews);
 
