@@ -11,13 +11,13 @@ router.route("/")
 .get((req, res) => {
     res.json(reviews)
 }).post((req, res) => {
+    // Check if all requirements are included to create a review
     if(req.body.participantId && req.body.tripId && req.body.tripName && req.body.destination && req.body.rating && req.body.review) {
         // Create the review
         const review = {
             id: reviews[reviews.length - 1].id + 1,
             ...req.body
         }
-
         // Add the review to reviews data
         reviews.push(review);
         // Display the created review

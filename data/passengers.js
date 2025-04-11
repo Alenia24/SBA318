@@ -6,12 +6,12 @@ const passengers = [
     email: "sarah.smith@example.com",
     telephone: "+1-555-2345",
     address: "456 Elm St, Fairbanks, AK, USA",
-    emergency_contact: {
+    emergencyContact: {
       name: "Mike Smith",
       relationship: "Brother",
       telephone: "+1-555-6789",
     },
-    passport_number: "X2345678",
+    passportNumber: "X2345678",
   },
   {
     id: 2,
@@ -20,12 +20,12 @@ const passengers = [
     email: "carlos.garcia@example.com",
     telephone: "+1-555-3456",
     address: "789 Oak St, Lima, Peru",
-    emergency_contact: {
+    emergencyContact: {
       name: "Maria Garcia",
       relationship: "Mother",
       telephone: "+51-555-7890",
     },
-    passport_number: "P9876543",
+    passportNumber: "P9876543",
   },
   {
     id: 3,
@@ -34,12 +34,12 @@ const passengers = [
     email: "emily.johnson@example.com",
     telephone: "+1-555-4567",
     address: "321 Pine St, Miami, FL, USA",
-    emergency_contact: {
+    emergencyContact: {
       name: "David Johnson",
       relationship: "Father",
       telephone: "+1-555-1230",
     },
-    passport_number: "X6543210",
+    passportNumber: "X6543210",
   },
   {
     id: 4,
@@ -48,12 +48,12 @@ const passengers = [
     email: "will.brown@example.com",
     telephone: "+1-555-5678",
     address: "222 Maple St, New York, NY, USA",
-    emergency_contact: {
+    emergencyContact: {
       name: "Laura Brown",
       relationship: "Wife",
       telephone: "+1-555-8765",
     },
-    passport_number: "X1122334",
+    passportNumber: "X1122334",
   },
   {
     id: 5,
@@ -62,12 +62,12 @@ const passengers = [
     email: "olivia.white@example.com",
     telephone: "+1-555-6789",
     address: "987 Birch St, San Francisco, CA, USA",
-    emergency_contact: {
+    emergencyContact: {
       name: "John White",
       relationship: "Father",
       telephone: "+1-555-2345",
     },
-    passport_number: "P5566778",
+    passportNumber: "P5566778",
   },
   {
     id: 6,
@@ -76,12 +76,12 @@ const passengers = [
     email: "sophia.williams@example.com",
     telephone: "+1-555-7890",
     address: "555 Chestnut St, Rome, Italy",
-    emergency_contact: {
+    emergencyContact: {
       name: "Antonio Williams",
       relationship: "Husband",
       telephone: "+39-555-8901",
     },
-    passport_number: "I1234567",
+    passportNumber: "I1234567",
   },
   {
     id: 7,
@@ -90,12 +90,12 @@ const passengers = [
     email: "michael.davis@example.com",
     telephone: "+1-555-8901",
     address: "888 Cedar St, Florence, Italy",
-    emergency_contact: {
+    emergencyContact: {
       name: "Anna Davis",
       relationship: "Sister",
       telephone: "+39-555-4321",
     },
-    passport_number: "I2345678",
+    passportNumber: "I2345678",
   },
   {
     id: 8,
@@ -104,12 +104,12 @@ const passengers = [
     email: "david.green@example.com",
     telephone: "+1-555-1234",
     address: "123 Palm St, Nairobi, Kenya",
-    emergency_contact: {
+    emergencyContact: {
       name: "Ruth Green",
       relationship: "Wife",
       telephone: "+254-555-6789",
     },
-    passport_number: "K1234567",
+    passportNumber: "K1234567",
   },
   {
     id: 9,
@@ -118,12 +118,12 @@ const passengers = [
     email: "isabella.miller@example.com",
     telephone: "+1-555-5678",
     address: "456 Willow St, Cape Town, South Africa",
-    emergency_contact: {
+    emergencyContact: {
       name: "James Miller",
       relationship: "Brother",
       telephone: "+27-555-2345",
     },
-    passport_number: "S9876543",
+    passportNumber: "S9876543",
   },
   {
     id: 10,
@@ -132,12 +132,12 @@ const passengers = [
     email: "liam.anderson@example.com",
     telephone: "+1-555-5678",
     address: "123 Cedar St, Buenos Aires, Argentina",
-    emergency_contact: {
+    emergencyContact: {
       name: "Rachel Anderson",
       relationship: "Sister",
       telephone: "+54-555-9876",
     },
-    passport_number: "A1122334",
+    passportNumber: "A1122334",
   },
   {
     id: 11,
@@ -146,12 +146,12 @@ const passengers = [
     email: "lucas.martinez@example.com",
     telephone: "+1-555-7890",
     address: "456 Oak St, Los Angeles, CA, USA",
-    emergency_contact: {
+    emergencyContact: {
       name: "Maria Martinez",
       relationship: "Mother",
       telephone: "+1-555-9876",
     },
-    passport_number: "X2233445",
+    passportNumber: "X2233445",
   },
   {
     id: 12,
@@ -160,12 +160,12 @@ const passengers = [
     email: "ava.robinson@example.com",
     telephone: "+1-555-8901",
     address: "789 Pine St, Boston, MA, USA",
-    emergency_contact: {
+    emergencyContact: {
       name: "Daniel Robinson",
       relationship: "Brother",
       telephone: "+1-555-6543",
     },
-    passport_number: "P9988776",
+    passportNumber: "P9988776",
   },
   {
     id: 13,
@@ -174,12 +174,12 @@ const passengers = [
     email: "ava.robinson@example.com",
     telephone: "+1-555-8901",
     address: "789 Pine St, Boston, MA, USA",
-    emergency_contact: {
+    emergencyContact: {
       name: "Daniel Robinson",
       relationship: "Brother",
       telephone: "+1-555-6543",
     },
-    passport_number: "P9988776",
+    passportNumber: "P9988776",
   },
   {
     id: 14,
@@ -188,12 +188,12 @@ const passengers = [
     email: "jacob.wilson@example.com",
     telephone: "+1-555-1230",
     address: "234 Birch St, Anchorage, AK, USA",
-    emergency_contact: {
+    emergencyContact: {
       name: "Emily Wilson",
       relationship: "Mother",
       telephone: "+1-555-7890",
     },
-    passport_number: "X5647381",
+    passportNumber: "X5647381",
   },
   {
     id: 15,
@@ -202,12 +202,12 @@ const passengers = [
     email: "rachel.green@example.com",
     telephone: "+1-555-2340",
     address: "111 Redwood St, Fairbanks, AK, USA",
-    emergency_contact: {
+    emergencyContact: {
       name: "George Green",
       relationship: "Father",
       telephone: "+1-555-3210",
     },
-    passport_number: "X8765432",
+    passportNumber: "X8765432",
   },
   {
     id: 16,
@@ -216,12 +216,12 @@ const passengers = [
     email: "christopher.clark@example.com",
     telephone: "+1-555-3450",
     address: "342 Pine St, Wasilla, AK, USA",
-    emergency_contact: {
+    emergencyContact: {
       name: "Jennifer Clark",
       relationship: "Wife",
       telephone: "+1-555-6540",
     },
-    passport_number: "X7890123",
+    passportNumber: "X7890123",
   },
   {
     id: 17,
@@ -230,12 +230,12 @@ const passengers = [
     email: "lily.adams@example.com",
     telephone: "+1-555-4560",
     address: "654 Oak St, Juneau, AK, USA",
-    emergency_contact: {
+    emergencyContact: {
       name: "Samuel Adams",
       relationship: "Brother",
       telephone: "+1-555-4320",
     },
-    passport_number: "X8901234",
+    passportNumber: "X8901234",
   },
   {
     id: 18,
@@ -244,12 +244,12 @@ const passengers = [
     email: "carlos.rivera@example.com",
     telephone: "+1-555-6780",
     address: "232 Maple St, Lima, Peru",
-    emergency_contact: {
+    emergencyContact: {
       name: "Ana Rivera",
       relationship: "Wife",
       telephone: "+51-555-9876",
     },
-    passport_number: "P3344556",
+    passportNumber: "P3344556",
   },
   {
     id: 19,
@@ -258,12 +258,12 @@ const passengers = [
     email: "sofia.torres@example.com",
     telephone: "+1-555-7890",
     address: "421 Cedar St, Rio de Janeiro, Brazil",
-    emergency_contact: {
+    emergencyContact: {
       name: "Pedro Torres",
       relationship: "Brother",
       telephone: "+55-555-3210",
     },
-    passport_number: "B1122334",
+    passportNumber: "B1122334",
   },
   {
     id: 20,
@@ -272,12 +272,12 @@ const passengers = [
     email: "julian.silva@example.com",
     telephone: "+1-555-8901",
     address: "678 Pine St, Buenos Aires, Argentina",
-    emergency_contact: {
+    emergencyContact: {
       name: "Isabel Silva",
       relationship: "Mother",
       telephone: "+54-555-6543",
     },
-    passport_number: "A9988776",
+    passportNumber: "A9988776",
   },
   {
     id: 21,
@@ -286,12 +286,12 @@ const passengers = [
     email: "gabriela.hernandez@example.com",
     telephone: "+1-555-2345",
     address: "321 Birch St, Santiago, Chile",
-    emergency_contact: {
+    emergencyContact: {
       name: "Ricardo Hernandez",
       relationship: "Father",
       telephone: "+56-555-7890",
     },
-    passport_number: "C6677889",
+    passportNumber: "C6677889",
   },
   {
     id: 22,
@@ -300,12 +300,12 @@ const passengers = [
     email: "charlotte.miller@example.com",
     telephone: "+1-555-2345",
     address: "567 Oak St, Chicago, IL, USA",
-    emergency_contact: {
+    emergencyContact: {
       name: "David Miller",
       relationship: "Husband",
       telephone: "+1-555-8765",
     },
-    passport_number: "J2233445",
+    passportNumber: "J2233445",
   },
   {
     id: 23,
@@ -314,12 +314,12 @@ const passengers = [
     email: "henry.williams@example.com",
     telephone: "+1-555-3456",
     address: "432 Cedar St, Seattle, WA, USA",
-    emergency_contact: {
+    emergencyContact: {
       name: "Ella Williams",
       relationship: "Sister",
       telephone: "+1-555-9876",
     },
-    passport_number: "J9988776",
+    passportNumber: "J9988776",
   },
   {
     id: 24,
@@ -328,12 +328,12 @@ const passengers = [
     email: "madeline.walker@example.com",
     telephone: "+1-555-4567",
     address: "789 Birch St, Toronto, Canada",
-    emergency_contact: {
+    emergencyContact: {
       name: "Laura Walker",
       relationship: "Mother",
       telephone: "+1-555-5432",
     },
-    passport_number: "C1122334",
+    passportNumber: "C1122334",
   },
   {
     id: 25,
@@ -342,12 +342,12 @@ const passengers = [
     email: "sebastian.roberts@example.com",
     telephone: "+1-555-5678",
     address: "876 Maple St, New York, NY, USA",
-    emergency_contact: {
+    emergencyContact: {
       name: "Linda Roberts",
       relationship: "Mother",
       telephone: "+1-555-4321",
     },
-    passport_number: "J4455667",
+    passportNumber: "J4455667",
   },
   {
     id: 26,
@@ -356,12 +356,12 @@ const passengers = [
     email: "emma.davis@example.com",
     telephone: "+1-555-6780",
     address: "223 Chestnut St, Rome, Italy",
-    emergency_contact: {
+    emergencyContact: {
       name: "George Davis",
       relationship: "Husband",
       telephone: "+39-555-7890",
     },
-    passport_number: "I2233445",
+    passportNumber: "I2233445",
   },
   {
     id: 27,
@@ -370,12 +370,12 @@ const passengers = [
     email: "james.miller@example.com",
     telephone: "+1-555-7891",
     address: "432 Oak St, Florence, Italy",
-    emergency_contact: {
+    emergencyContact: {
       name: "Sophia Miller",
       relationship: "Sister",
       telephone: "+39-555-9876",
     },
-    passport_number: "I4455667",
+    passportNumber: "I4455667",
   },
   {
     id: 28,
@@ -384,12 +384,12 @@ const passengers = [
     email: "nina.robinson@example.com",
     telephone: "+1-555-8902",
     address: "567 Pine St, Venice, Italy",
-    emergency_contact: {
+    emergencyContact: {
       name: "Alex Robinson",
       relationship: "Father",
       telephone: "+39-555-1234",
     },
-    passport_number: "I2233445",
+    passportNumber: "I2233445",
   },
   {
     id: 29,
@@ -398,12 +398,12 @@ const passengers = [
     email: "lucas.garcia@example.com",
     telephone: "+1-555-2341",
     address: "678 Cedar St, Milan, Italy",
-    emergency_contact: {
+    emergencyContact: {
       name: "Isabel Garcia",
       relationship: "Mother",
       telephone: "+39-555-8765",
     },
-    passport_number: "I6677889",
+    passportNumber: "I6677889",
   },
   {
     id: 30,
@@ -412,12 +412,12 @@ const passengers = [
     email: "olivia.carter@example.com",
     telephone: "+1-555-6789",
     address: "111 Redwood St, Anchorage, AK, USA",
-    emergency_contact: {
+    emergencyContact: {
       name: "James Carter",
       relationship: "Father",
       telephone: "+1-555-4321",
     },
-    passport_number: "X2345678",
+    passportNumber: "X2345678",
   },
 ];
 
