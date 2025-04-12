@@ -34,8 +34,11 @@ app.use("/api/itenaries", itenary);
 app.use("/api/passengers", passengers);
 app.use("/api/reviews", reviews);
 
+// Set up view engine
+app.set('view engine', 'ejs')
+
 app.get("/", (req, res) => {
-  res.json("It works");
+  res.render("index");
 });
 
 // 404 Middleware
