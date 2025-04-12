@@ -5,6 +5,8 @@ const port = 3000;
 
 // serve static files from the styles directory
 app.use(express.static("./styles"));
+app.use(express.static("./assets"));
+
 
 // Import routes
 const trips = require("./routes/trips");
