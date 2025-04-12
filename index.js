@@ -3,6 +3,9 @@ const bodyParser = require("body-parser");
 const app = express();
 const port = 3000;
 
+// serve static files from the styles directory
+app.use(express.static("./styles"));
+
 // Import routes
 const trips = require("./routes/trips");
 const itenary = require("./routes/itenaries");

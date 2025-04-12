@@ -4,8 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trip Agency</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <h1>Book a Trip</h1>
+    <h1>Write a review</h1>
+    
+    <form action="/api/reviews" method="post">
+        <label for="participantId">Participant Id <br>
+            <input type="text" id="participantId" name="participantId" required>
+        </label><br>
+        <label for="tripId">Trip Id <br>
+            <input type="number" name="tripId" id="tripId" required>
+        </label><br>
+        <label for="tripName">Trip Name <br>
+            <input type="text" name="tripName" id="tripName" required>
+        </label><br>
+        <label for="destination">Destination <br>
+            <input type="text" name="destination" id="destination" required>
+        </label><br>
+        <label for="rating">Rating <br>
+            <input type="number" name="rating" id="rating">
+        </label><br>
+        <label for="review">Review <br>
+            <textarea name="review" id="review" required></textarea>
+        </label>
+        <br>
+        <input type="submit" value="Submit Review">
+    </form>
 </body>
 </html>
