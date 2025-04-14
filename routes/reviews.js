@@ -1,12 +1,52 @@
 const express = require("express");
+const Joi = require("joi");
 const router = express.Router();
 
 // import reviews data
 const reviews = require("../data/reviews");
 
-
 // import error handling middleware
 const error = require("../utilities/error");
+
+const reviewSchema = Joi.object({
+  participantId: Joi.number().integer().required().messages({
+    "number.base": "Participant ID must be a number.",
+    "number.integer": "Participant ID must be an integer.",
+    "any.required": "Participant ID is required.",
+  }),
+  tripId: Joi.number().integer().required().messages({
+    "number.base": "Trip ID must be a number.",
+    "number.integer": "Trip ID must be an integer.",
+    "any.required": "Trip ID is required.",
+  }),
+  tripName: Joi.string().trim().min(3).max(150).required().messages({
+    "string.base": "Trip name must be a string.",
+    "string.empty": "Trip name cannot be empty.",
+    "string.min": "Trip name must be at least 3 characters.",
+    "string.max": "Trip name cannot exceed 150 characters.",
+    "any.required": "Trip name is required.",
+  }),
+  destination: Joi.string().trim().min(3).max(150).required().messages({
+    "string.base": "Destination must be a string.",
+    "string.empty": "Destination cannot be empty.",
+    "string.min": "Destination must be at least 3 characters.",
+    "string.max": "Destination cannot exceed 150 characters.",
+    "any.required": "Destination is required.",
+  }),
+  rating: Joi.number().integer().min(1).max(10).required().messages({
+    "number.base": "Rating must be a number.",
+    "number.min": "Rating must be at least 1.",
+    "number.max": "Rating must not exceed 10.",
+    "any.required": "Rating is required.",
+  }),
+  review: Joi.string().trim().min(50).max(1000).required().messages({
+    "string.base": "Review must be a string.",
+    "string.empty": "Review cannot be empty.",
+    "string.min": "Review must be at least 50 characters.",
+    "string.max": "Review cannot exceed 1000 characters.",
+    "any.required": "Review is required.",
+  }),
+});
 
 router
   .route("/")
@@ -24,7 +64,10 @@ router
         // Iterate through each review
         reviews.forEach((review) => {
           // If the review participantId matches the query participantId
-          if (review.participantId === Number(req.query.participantId) && review.tripId === Number(req.query.tripId )) {
+          if (
+            review.participantId === Number(req.query.participantId) &&
+            review.tripId === Number(req.query.tripId)
+          ) {
             // Display the review with the query match
             res.json(review);
           } else next();
@@ -32,26 +75,25 @@ router
       } else next();
     } else res.json(reviews);
   })
-  .post((req, res) => {
-    // Check if all requirements are included to create a review
-    if (
-      req.body.participantId &&
-      req.body.tripId &&
-      req.body.tripName &&
-      req.body.destination &&
-      req.body.rating &&
-      req.body.review
-    ) {
-      // Create the review
-      const review = {
-        id: reviews[reviews.length - 1].id + 1,
-        ...req.body,
-      };
-      // Add the review to reviews data
-      reviews.push(review);
-      // Display the created review
-      res.json(review);
-    } else res.json({ Error: "Insufficient Data" });
+  .post((req, res, next) => {
+    const { error } = reviewSchema.validate(req.body, {
+      abortEarly: false,
+    });
+
+    if (error) {
+      return res.json(error.details[0].message);
+    }
+
+    // Create the passenger
+    const review = {
+      id: reviews[reviews.length - 1].id + 1,
+      ...req.body,
+    };
+
+    // Add the review to reviews data array
+    reviews.push(review);
+    //Display the created passenger
+    res.json(review);
   });
 
 router
