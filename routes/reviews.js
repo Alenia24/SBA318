@@ -19,13 +19,21 @@ const reviewSchema = Joi.object({
     "number.integer": "Trip ID must be an integer.",
     "any.required": "Trip ID is required.",
   }),
-  tripName: Joi.string().trim().min(3).max(150).required().messages({
-    "string.base": "Trip name must be a string.",
-    "string.empty": "Trip name cannot be empty.",
-    "string.min": "Trip name must be at least 3 characters.",
-    "string.max": "Trip name cannot exceed 150 characters.",
-    "any.required": "Trip name is required.",
-  }),
+  tripName: Joi.string()
+    .trim()
+    .pattern(/^[A-Za-zÀ-ÿ\s,.'-]+$/)
+    .min(3)
+    .max(150)
+    .required()
+    .messages({
+      "string.base": "Trip name must be a string.",
+      "string.empty": "Trip name cannot be empty.",
+      "string.pattern.base":
+        "Destination can only contain letters, spaces, and punctuation.",
+      "any.required": "Trip name is required.",
+      "string.min": "Trip name must be at least 3 characters.",
+      "string.max": "Trip name cannot exceed 150 characters."
+    }),
   destination: Joi.string().trim().min(3).max(150).required().messages({
     "string.base": "Destination must be a string.",
     "string.empty": "Destination cannot be empty.",
