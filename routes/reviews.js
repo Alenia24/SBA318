@@ -11,24 +11,24 @@ const error = require("../utilities/error");
 router
   .route("/")
   .get((req, res, next) => {
-    // Query review by tripId
-    if(req.query.tripId) {
+    // Query review by participantId
+    // http://127.0.0.1:3000/api/reviews?tripId=7&participantId=7
+    if (req.query.tripId && req.query.participantId) {
       // Check if the trip exists in reviews
       const trip = reviews.find((r) => r.tripId == req.query.tripId);
+      const participant = reviews.find(
+        (p) => p.participantId === Number(req.query.participantId)
+      );
 
-      if(trip) {
-        // Create an array to store the posts
-        const reviewsArr = [];
+      if (trip && participant) {
         // Iterate through each review
-        reviews.forEach(review => {
-          // If the review tripId matches the query tripId
-          if(review.tripId == req.query.tripId) {
-            // Add the review to the reviewsArr
-            reviewsArr.push(review)
+        reviews.forEach((review) => {
+          // If the review participantId matches the query participantId
+          if (review.participantId === Number(req.query.participantId)) {
+            // Display the review with the query match
+            res.json(review);
           }
-        })
-        // Display all the reviews with the query match
-        res.json(reviewsArr);
+        });
       } else next();
     } else res.json(reviews);
   })
