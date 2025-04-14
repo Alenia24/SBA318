@@ -13,8 +13,6 @@ const trips = require("./routes/trips");
 const itenary = require("./routes/itenaries");
 const passengers = require("./routes/passengers");
 const reviews = require("./routes/reviews");
-const register = require("./routes/register");
-const login = require("./routes/login");
 
 // Import error middleware
 const error = require("./utilities/error");
@@ -40,8 +38,6 @@ app.use("/api/trips", trips);
 app.use("/api/itenaries", itenary);
 app.use("/api/passengers", passengers);
 app.use("/api/reviews", reviews);
-app.use("/api/register", register);
-app.use("/api/login", login);
 
 // Set up view engine
 app.set('view engine', 'ejs')
