@@ -24,10 +24,10 @@ router
         // Iterate through each review
         reviews.forEach((review) => {
           // If the review participantId matches the query participantId
-          if (review.participantId === Number(req.query.participantId)) {
+          if (review.participantId === Number(req.query.participantId) && review.tripId === Number(req.query.tripId )) {
             // Display the review with the query match
             res.json(review);
-          }
+          } else next();
         });
       } else next();
     } else res.json(reviews);
