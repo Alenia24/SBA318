@@ -47,10 +47,10 @@ const reviewSchema = Joi.object({
     "number.max": "Rating must not exceed 10.",
     "any.required": "Rating is required.",
   }),
-  review: Joi.string().trim().min(50).max(1000).required().messages({
+  review: Joi.string().trim().min(3).max(1000).required().messages({
     "string.base": "Review must be a string.",
     "string.empty": "Review cannot be empty.",
-    "string.min": "Review must be at least 50 characters.",
+    "string.min": "Review must be at least 3 characters.",
     "string.max": "Review cannot exceed 1000 characters.",
     "any.required": "Review is required.",
   }),

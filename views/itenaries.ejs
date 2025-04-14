@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Trip Reviews</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Itenaries</title>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
     />
-    <link rel="stylesheet" href="/reviews.css" />
+    <link rel="stylesheet" href="/itenaries.css" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
-  </head>
-  <body>
+</head>
+<body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
         <a class="navbar-brand" href="/">Travel Bar</a>
@@ -35,22 +35,17 @@
         </div>
       </div>
     </nav>
-
-    <h1>Trip Reviews</h1>
-
-    <% if (reviewsData.length === 0) { %>
-    <p style="text-align: center">No reviews available for this trip yet.</p>
-    <% } else { %>
-    <div class="review-container">
-      <% reviewsData.forEach(r => { %>
-      <div class="review-card">
-        <div class="trip-name"><%= r.tripName %></div>
-        <div class="destination"><%= r.destination %></div>
-        <div class="rating">Rating: <%= r.rating %>/10</div>
-        <div class="review-text"><%= r.review %></div>
+    
+    <h1>Itenaries</h1>
+  <div class="grid">
+    <% itenariesData.forEach(activity => { %>
+      <div class="card">
+        <h2><%= activity.name %></h2>
+        <p class="location"><%= activity.location %></p>
+        <p><strong>Duration:</strong> <%= activity.duration %></p>
+        <p><%= activity.description %></p>
       </div>
-      <% }) %>
-    </div>
-    <% } %>
-  </body>
+    <% }) %>
+  </div>
+</body>
 </html>
