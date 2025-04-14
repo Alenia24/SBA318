@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="/">Homepage</a>
+    <h1>Trip Reviews</h1>
+  <% if (reviews.length > 0) { %>
+    <ul>
+      <% reviews.forEach(review => { %>
+        <li>
+          <strong><%= review.tripName %></strong> — <%= review.destination %> <br>
+          Rating: <%= review.rating %>/10 <br>
+          Review: <%= review.review %>
+        </li>
+        <hr>
+      <% }) %>
+    </ul>
+  <% } else { %>
+    <p>No reviews yet!</p>
+  <% } %>
+</body>
+</html>
