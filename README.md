@@ -5,7 +5,7 @@ This is a RESTful API for managing a travel agency system. You can **add**, **ed
 - Trips
 - Itenaries
 - Reviews
-- Participants
+- Paassengers( Only accessable by admins which has not been implemented as yet)
 
 ---
 
